@@ -12,6 +12,26 @@ class Square:
         self.__size = size
         self.__position = position
 
+    @property                                                                                   
+    def size(self):                                                                             
+        """getter for size"""                                                                   
+        return self.__size                                                                      
+                                                                                                
+    @size.setter                                                                                
+    def size(self, value):                                                                      
+        """setter for size                                                                      
+                                                                                                
+        Raises:                                                                                 
+        TypeError: if size is not type int                                                      
+        ValueError: if size is less than zero                                                   
+        """                                                                                     
+        if not isinstance(value, int):                                                          
+            raise TypeError("size must be an integer")                                          
+        elif value < 0:                                                                         
+            raise ValueError("size must be >= 0")                                               
+        else:                                                                                   
+            self.__size = value  
+
     @property
     def position(self):
         """getter for position"""
@@ -28,26 +48,6 @@ class Square:
             2 positive integers")
         else:
             self.__position = position
-
-    @property
-    def size(self):
-        """getter for size"""
-        return self.__size
-
-    @size.setter
-    def size(self, value):
-        """setter for size
-
-        Raises:
-        TypeError: if size is not type int
-        ValueError: if size is less than zero
-        """
-        if not isinstance(value, int):
-            raise TypeError("size must be an integer")
-        elif value < 0:
-            raise ValueError("size must be >= 0")
-        else:
-            self.__size = value
 
     def area(self):
         """Defined object area
