@@ -64,9 +64,9 @@ class Rectangle:
             return string
         for item in range(self.__height):
             if item != self.__height - 1:
-                string = string + Rectangle.print_symbol * self.__width + "\n"
+                string = string + str(self.print_symbol) * self.__width + "\n"
             else:
-                string = string + Rectangle.print_symbol * self.__width
+                string = string + str(self.print_symbol) * self.__width
         return string
 
     def __repr__(self):
