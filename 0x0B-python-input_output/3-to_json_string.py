@@ -8,4 +8,3 @@ def to_json_string(my_obj):
     """functions to convert json to string"""
 
     return json.dumps(my_obj)
-
