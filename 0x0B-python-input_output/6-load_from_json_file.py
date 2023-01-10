@@ -8,4 +8,4 @@ def load_from_json_file(filename):
     """function to load from a json file"""
 
     with open(filename, "r", encoding="utf-8") as f:
-        return json.load(f)
+        return json.loads(f.read())
