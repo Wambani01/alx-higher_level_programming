@@ -4,7 +4,6 @@
 import json
 
 
-
 def load_from_json_file(filename):
     """function to load from a json file"""
 
