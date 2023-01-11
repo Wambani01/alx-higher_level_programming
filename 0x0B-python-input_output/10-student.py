@@ -19,8 +19,8 @@ class Student:
         representation"""
 
        if isinstance(attrs, list) and\
-            all(isinstance(item, str) for item in attrs):
-            result = {}
+               all(isinstance(item, str) for item in attrs):
+                   result = {}
             for i in attrs:
                 try:
                     result[i] = self.__dict__[i]
