@@ -17,14 +17,13 @@ class Student:
     def to_json(self, attrs=None):
         """converts class attributes to jason
         representation"""
-
-       if isinstance(attrs, list) and\
-               all(isinstance(item, str) for item in attrs):
-                   result = {}
+        if isinstance(attrs, list) and\
+                all(isinstance(item, str) for item in attrs):
+            result = {}
             for i in attrs:
                 try:
                     result[i] = self.__dict__[i]
                 except Exception:
                     pass
-            return result
-        return self.__dict__ 
+                return result
+        return self.__dict__
