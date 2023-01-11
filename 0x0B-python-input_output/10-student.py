@@ -25,5 +25,6 @@ class Student:
                     result[i] = self.__dict__[i]
                 except Exception:
                     pass
-                return result
-        return self.__dict__
+            return result
+        elif attrs is None:
+            return self.__dict__
