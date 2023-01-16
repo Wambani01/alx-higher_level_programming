@@ -88,7 +88,7 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         else:
             self.__y = y
-    
+
     def area(self):
         return self.__height * self.__width
 
@@ -98,9 +98,11 @@ class Rectangle(Base):
         for i in range(self.__height):
             print(" " * self.__x, end="")
             print("#" * self.__width)
+
     def __str__(self):
-        return("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x,\
-                self.__y, self.__width, self.__height))
+        return (f"[Rectangle] ({self.id}){self.__x}/{self.__y}\
+            - {self.__width}/{self.__height}")
+
     def update(self, *args, **kwargs):
         if args:
             if len(args) >= 1:
@@ -116,5 +118,3 @@ class Rectangle(Base):
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
-
-        
