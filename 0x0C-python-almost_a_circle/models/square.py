@@ -7,12 +7,12 @@ from models.rectangle import Rectangle
 class Square(Rectangle):
     """defined a square class"""
     def __init__(self, size, x=0, y=0, id=None):
-        self.__size = size
         super().__init__(size, size, x, y, id)
+        self.size = size
 
     def __str__(self):
-        return("[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.__size))
-
+        return("[Square] ({}) {}/{} - {}\
+                ".format(self.id, self.x, self.y, self.__size))
 
     @property
     def size(self):
@@ -21,7 +21,8 @@ class Square(Rectangle):
     @size.setter
     def size(self, value):
         self.width = value
-        self.height = value
+        self.heigh = value
+        self.__size = value
 
     def update(self, *args, **kwargs):
         if args:
@@ -36,3 +37,7 @@ class Square(Rectangle):
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        return {"id": self.id, "x": self.x,
+                "size": self.size, "y": self.y}
