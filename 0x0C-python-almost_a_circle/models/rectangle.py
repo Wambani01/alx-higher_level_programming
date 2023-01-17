@@ -39,10 +39,12 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """getter for width"""
         return self.__width
 
     @width.setter
     def width(self, width):
+        """setter for width"""
         if type(width) is not int:
             raise TypeError("width must be an integer")
         elif width <= 0:
@@ -52,10 +54,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """getter for height"""
         return self.__height
 
     @height.setter
     def height(self, height):
+        """setter for height"""
         if type(height) is not int:
             raise TypeError("height must be an integer")
         elif height <= 0:
@@ -65,10 +69,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """getter for x"""
         return self.__x
 
     @x.setter
     def x(self, x):
+        """setter for x"""
         if type(x) is not int:
             raise TypeError("x must be an integer")
         elif x < 0:
@@ -78,10 +84,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """getter for y"""
         return self.__y
 
     @y.setter
     def y(self, y):
+        """setter for y"""
         if type(y) is not int:
             raise TypeError("y must be an integer")
         elif y < 0:
@@ -90,9 +98,11 @@ class Rectangle(Base):
             self.__y = y
 
     def area(self):
+        """finds and returns the rectangle area"""
         return self.__height * self.__width
 
     def display(self):
+        """a function to display the rectangle"""
         for i in range(self.__y):
             print()
         for i in range(self.__height):
@@ -100,10 +110,12 @@ class Rectangle(Base):
             print("#" * self.__width)
 
     def __str__(self):
+        """returns a string representation of the object"""
         return (f"[Rectangle] ({self.id}){self.__x}/{self.__y}\
  - {self.__width}/{self.__height}")
 
     def update(self, *args, **kwargs):
+        """updates the object with different values"""
         if args:
             if len(args) >= 1:
                 self.id = args[0]
@@ -120,5 +132,6 @@ class Rectangle(Base):
                 setattr(self, key, value)
 
     def to_dictionary(self):
+        """returns a ductionary representation of the object"""
         return {"x": self.x, "y": self.y,
                 "id": self.id, "height": self.height, "width": self.width}
