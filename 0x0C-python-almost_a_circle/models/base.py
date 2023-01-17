@@ -35,3 +35,11 @@ class Base:
 
         with open(filename, 'w') as f:
             f.write(cls.to_json_string(result))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """Returns deserilizated json string"""
+        if json_string:
+            return json.loads(json_string)
+        else:
+           return []
