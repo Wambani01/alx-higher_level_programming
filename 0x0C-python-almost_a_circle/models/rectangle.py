@@ -3,6 +3,7 @@
 """rectangle class inheriting from base"""
 from models.base import Base
 
+
 class Rectangle(Base):
     """defined rectangle class"""
 
@@ -74,3 +75,42 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         else:
             self.__y = y
+
+    def area(self):
+        """returns the rectangle area"""
+        return self.__height * self.__width
+
+    def display(self):
+        """a function to display the rectangle"""
+        for i in range(self.__y):
+            print()
+        for i in range(self.__height):
+            print(" " * self.__x, end="")
+            print("#" * self.__width)
+
+    def __str__(self):
+        """returns a string representation of the object"""
+        return (f"[Rectangle] ({self.id}){self.__x}/{self.__y}\
+ - {self.__width}/{self.__height}")
+
+    def update(self, *args, **kwargs):
+        """updates the object with different values"""
+        if args:
+            if len(args) >= 1:
+                self.id = args[0]
+            if len(args) >= 2:
+                self.width = args[1]
+            if len(args) >= 3:
+                self.height = args[2]
+            if len(args) >= 4:
+                self.x = args[3]
+            if len(args) >= 5:
+                self.y = args[4]
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
+    def to_dictionary(self):
+        """returns a ductionary representation of the object"""
+        return {"x": self.x, "y": self.y,
+                "id": self.id, "height": self.height, "width": self.width}
