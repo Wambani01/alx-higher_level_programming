@@ -82,6 +82,7 @@ class Rectangle(Base):
 
     def display(self):
         """a function to display the rectangle"""
+
         for i in range(self.__y):
             print()
         for i in range(self.__height):
@@ -90,11 +91,13 @@ class Rectangle(Base):
 
     def __str__(self):
         """returns a string representation of the object"""
+
         return (f"[Rectangle] ({self.id}){self.__x}/{self.__y}\
  - {self.__width}/{self.__height}")
 
     def update(self, *args, **kwargs):
         """updates the object with different values"""
+
         if args:
             if len(args) >= 1:
                 self.id = args[0]
