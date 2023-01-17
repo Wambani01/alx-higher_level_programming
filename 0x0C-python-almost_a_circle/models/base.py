@@ -10,6 +10,7 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
+        """initialization"""
         if id is None:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
@@ -17,6 +18,7 @@ class Base:
             self.id = id
 
     def to_json_string(list_dictionaries):
+        """returns json object"""
         if len(list_dictionaries) == 0 or list_dictionaries is None:
             return "[]"
         else:
@@ -24,6 +26,7 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """saves a json object to a file"""
         result = []
         filename = cls.__name__ + ".json"
         if list_objs:
