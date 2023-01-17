@@ -6,8 +6,10 @@ from models.base import Base
 
 class Rectangle(Base):
     """defined rectangle class"""
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """initializes of an instance of the class"""
+
         self.width = width
         self.height = height
         self.x = x
@@ -16,7 +18,7 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """getter for width"""
+        """Returns width"""
         return self.__width
 
     @width.setter
@@ -31,7 +33,7 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        """getter for height"""
+        """Returns area height"""
         return self.__height
 
     @height.setter
@@ -46,7 +48,7 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """getter for x"""
+        """Returns x"""
         return self.__x
 
     @x.setter
@@ -61,7 +63,7 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """getter for y"""
+        """Returns y"""
         return self.__y
 
     @y.setter
@@ -75,7 +77,7 @@ class Rectangle(Base):
             self.__y = y
 
     def area(self):
-        """finds and returns the rectangle area"""
+        """returns the rectangle area"""
         return self.__height * self.__width
 
     def display(self):
