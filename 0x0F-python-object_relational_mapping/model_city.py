@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """ sql alchemy """
-from sqlalchemy import create_engine, Sequence, Column, Integer, String, ForeignKey
+from sqlalchemy import Sequence, Column, Integer, String, ForeignKey
 from model_state import Base, State
 
 
