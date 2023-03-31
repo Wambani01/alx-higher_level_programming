@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# retrieving a header from a urllib request
+"""retrieving a header from a urllib request """
 
 from urllib.request import urlopen
 from sys import argv

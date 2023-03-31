@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# sending a http request with header data
+""" sending a http request with header data """
 
 from urllib import request, parse
 from sys import argv

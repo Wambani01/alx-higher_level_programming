@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# a python script to open a url
+""" a python script to open a url """
 
 from urllib.request import urlopen
 
