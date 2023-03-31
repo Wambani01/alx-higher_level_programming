@@ -9,7 +9,7 @@ if __name__ == "__main__":
         data = argv[1]
     except IndexError:
         data = ""
-    url = 'http://503e6f4076ba.bfdc90b8.alx-cod.online:5000/search_user'
+    url = 'http://0.0.0.0:5000/search_user'
     response = requests.post(url, {'q': data})
     header = response.headers['Content-Type']
     if header == 'application/json':
