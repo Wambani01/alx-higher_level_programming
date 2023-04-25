@@ -9,7 +9,7 @@ request(url, (err, res, body) => {
   const tasks = JSON.parse(body);
   const dict = {};
   for (let i = 0; i < tasks.length; i++) {
-    if (!dict.hasOwnProperty(tasks[i].userId)) {
+    if (!dict[tasks[i].userId]) {
       dict[tasks[i].userId] = 0;
     }
     if (tasks[i].completed === true) {
