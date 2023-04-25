@@ -3,11 +3,11 @@
 // a script to read a file
 
 const fs = require('fs');
-const file_path = process.argv[2];
-fs.readFile(file_path, 'utf-8', (err, data) => {
+const filePath = process.argv[2];
+fs.readFile(filePath, 'utf-8', (err, data) => {
   if (err) {
     console.error(err);
-    return
+    return;
   }
-  console.log(data)
+  console.log(data);
 });
